@@ -1,0 +1,9 @@
+Translate the following expression into prefix form.
+
+NOTE: The expression in the picture, that was in the book, was a bit messed up, so I wrote what I think it was, but it doesn't matter if I did it wrong.
+
+The expression:
+
+5 + 1 + (2 - (3 - (6 + 1/3)))
+-----------------------------
+      3(6 - 2)(2 - 7)

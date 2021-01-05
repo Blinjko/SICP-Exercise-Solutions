@@ -1,0 +1,6 @@
+Observe that our model of evaluation allows for combinations whose operators are compound expressions. Use this observation to describe the behavior of the following procedure:
+
+(define (a-plus-abs-b a b)
+  ((if (> b 0) + -) a b))
+
+The above code defines a procedure named 'a-plus-abs-b', which has two parameters, 'a', and 'b'. 'a' and 'b' are used together in an operation, the operations consisting of '+', addition, or '-' subtraction. The operation is determined by the folliwng piece of code: '(if (> b 0) + -)', which in english means, if the value of b is greater than 0, then use the addition '+' operator, otherwise use the '-' subtraction operator. The behaivour of the function can be described by the following: If the value of 'b' is greater than 0, then '(+ a b)' will be performed, otherwise '(- a b)' will be performed.

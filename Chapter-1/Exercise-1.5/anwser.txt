@@ -1,0 +1,21 @@
+Ben Bitdiddle has invented a test to determine whether the interpreter he is faced with is using applicative-order evaluation or normal-order evaluation. He defines the following two procedures: 
+
+(define (p) (p))
+
+(define (test x y)
+  (if (= x 0)
+      0
+      y))
+
+Then he evaluates the expression
+
+(test 0 (p))
+
+What behavior will Ben observe with an interpreter that uses applicative-order evaluation? What behavior will he observe with an interpreter that uses normal-order evaluation? Explain your answer. (Assume that the evaluation rule for the special form if is the same whether the interpreter is using normal or applicative order: The predicate expression is evaluated first, and the result determines whether to evaluate the consequent or the alternative expression.)
+
+NOTE: I'm am unsure of the correctness of these anwsers, so do not assume they are correct.
+
+Anwser:
+Normal-order evaluation of '(test 0 (p))' would result in an infinite loop, because in normal-order evaluation the interpreter evaluates all sub expressions to primitives, then evaluates the current expression. When the interpreter tries to evaluate the sub-expression '(p)' an infinite loop would be entered.
+
+In applicative-order evaluation, '(test 0 (p))' would turn into '(if (= 0 0) 0 (p))' and then be evaluated. First, '(= 0 0)' would be evaluated to 'true' or '#t', and then the consequent expression would be evaluated, which is 0. After the consequent is evaluated, the if expression is finished, which is the last operator, so the whole expression evaluated to 0. The reason it doesn't end in an infinite loop is because in applicative-order evaluation, expressions are evaluated as they are needed, and the expression '(p)', the cause of the infinite loop, is never needed, and thus never evaluated, so no infinite loop is entered.
