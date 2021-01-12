@@ -6,3 +6,7 @@ This repository gets updated whenever I do more exercises in the SICP book, I am
 
 ## Notes
 All questions / exercises come from the SICP book, which is linked below, and all solutions come from my brain, so they might not all be correct. If you find any incorrect solutions, or have something to say to, or ask me, email me at: ```Ymxpbmprb0BnbWFpbC5jb20=```. It's base64, decode it to get my email. It might take me awile to respond, so please be patient.
+
+## Links
+[Structure and Interpretation of Computer Programs Book](https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-4.html)
+[Structure and Interpretation of Computer Programs Online Lectures](https://groups.csail.mit.edu/mac/classes/6.001/abelson-sussman-lectures/)
