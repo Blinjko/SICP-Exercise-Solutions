@@ -1,6 +1,9 @@
 # Structure and Interpretation of Computer Programs Exercises & Solutions
 This is a repository for the anwsers to the exercises in the Structure and Interpretation of Computer Progams (SICP) book. Exercises are organized by chapter, so exercises 1.\* are found under the ```Chapter-1``` folder. Each exercise has its own folder within the chapter's folder, titled ```Exercise-x.y```. So Exercise 1.1 would have the following path, ```Chapter-1/Exercise-1.1```. Each exercise's folder contains the exercise question in a file called ```question.txt```, and the anwser is either in a file named ```anwser.txt```, or ```anwser.scm``` if the awser was just Scheme code. Each exercise folder may also contain extra text, or code files that are relevant to the question.
 
+## Scheme Interpreter
+The Scheme implementation I use is [MIT/GNU Scheme](https://www.gnu.org/software/mit-scheme/).
+
 ## Updates
 This repository gets updated whenever I do more exercises in the SICP book, I am currently reading through it at my own pace, so it might take awhile before this repository is complete.
 
