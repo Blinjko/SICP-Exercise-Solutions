@@ -1,0 +1,40 @@
+Note: My code for the "sqrt" procedure can be found in the sqrt.scm file. Also in my version of the "sqrt" procedure, the "good-enough?" procedure is called "close-enough-guess".
+
+Tests using the original "good-enough?" procedure, or "close-enough-guess" procedure in my code.
+
+1. (sqrt 25) yeilds: 5.000000000041231  |  Successful
+2. (sqrt 1000000000000000000000) yeilds: Nothing after waiting a minute | Unsuccessful
+3. (sqrt 0.000010) yeilds: 0.001 | 0.001^2 is 1 decimal point off, so I'll consider this a Success
+4. (sqrt 0.000000000010) yeilds: 0.001 | I'm noticing a pattern... this will be counted as Unsuccessful
+
+Analsys:
+After running 4 tests I can come to the conclusion that when very large numbers are inserted into the current "sqrt" procedure, a seemingly infinite wait time is entered, I didn't feel like waiting to find out if it was true. When a number less than 0.001 is inserted into the current "sqrt" procedure 0.001 is always returned.
+
+Reasoning:
+Why do big numbers create a seemingly infinite wait time?
+I think the long wait time is caused by the fact that none of the guesses squared (guessess^2) were within 0.0001 of the radicand. I would also like to note that maybe it would just take a long time to compute a number within such a close range, or maybe an actual infinite loop was entered.
+
+Why do numbers smaller than 0.001 always return 0.001?
+This can be explained by stepping through the code. 
+1. sqrt-iter is called "(sqrt-iter 0.001 0.00001)"
+2. in sqrt-iter, close-enough-guess is called "(close-enough-guess 0.001 0.00001)"
+3. in close-enough-guess the following calculation is run "(>= 0.0001 (abs (- 0.00001 (* 0.001 0.001))))"
+4. The calcuation evaluates to true, because 0.00001 - 0.001 * 0.001 is less than or equal to 0.0001, which makes are guess valid, or "good-enough"
+5. Since the close-enough-guess procedure retured true, sqrt-iter returns the current guess, which is 0.001
+
+Summing it up, the reason "sqrt" returns 0.001 when given a number less than 0.001 is because the calculations ran in the "close-enough-guess" procedure will always evaluate to true, and the first guess, 0.001, will be returned.
+
+-------------------------------------------------
+The new "sqrt" procedure can be found in the new-sqrt.scm file.
+
+Running the same tests with the newly designed "sqrt" procedure.
+
+1. (sqrt 25) yeilds: 5.000000000053722 |  Successful
+2. (sqrt 1000000000000000000000) yeilds: 31622776601.683792 | Successful
+3. (sqrt 0.000010) yeilds: 3.1622926477232706e-3 |  Successful
+4. (sqrt 0.000000000010) yeilds: 6.108975981219131e-5 | Successful
+
+Analsys:
+All tests yeilded good accurate enough results, I tested to make sure the results of the tests about ^2 (squared) is roughly equal to the radicand.
+
+To anwser the final question: The newly designed "sqrt" procedure does work better for bigger and smaller numbers.
