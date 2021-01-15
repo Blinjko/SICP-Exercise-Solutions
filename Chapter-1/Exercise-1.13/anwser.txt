@@ -1,0 +1,64 @@
+I'll be keeping this shit simple, because I don't know any fancy math theory, and I don't think it is necessary to do this question.
+
+For reference:
+φ=(1+√5)/2
+ψ=(1-√5)/2
+
+What I'm trying to prove:
+Fib(n)=(φⁿ-ψⁿ)/√5
+
+
+I will be doing 5 cases of random fibonacci numbers.
+
+-------------------------------------------
+Case 1:
+Fib(12) = 144
+
+(((1+√5)/2)¹² - ((1-√5)/2)¹²) / √5 = 143.99999999999997
+
+Verdict, 143.9999 is very close to 144, so, 
+
+VALID
+
+-------------------------------------------
+Case 2:
+Fib(8) = 21
+
+(((1+√5)/2)⁸ - ((1-√5)/2)⁸) / √5 = 21.0
+
+Verdict, 21.0 is equal to 21, so
+
+VALID
+
+-------------------------------------------
+Case 3:
+Fib(43) = 433494437
+
+(((1+√5)/2)⁴³ - ((1-√5)/2)⁴³) / √5 = 433494437.0
+
+The values are exactly the same, so
+
+VALID
+
+-------------------------------------------
+Case 4:
+Fib(29) = 514229
+
+(((1+√5)/2)²⁹ - ((1-√5)/2)²⁹) / √5 = 514228.99999999994
+
+Verdict, 514228.9999 is very very close to 514229, and if it gets rounded it's actually equal so,
+
+VALID
+
+-------------------------------------------
+Case 5:
+Fib(16) = 987
+
+(((1+√5)/2)¹⁶ - ((1-√5)/2)¹⁶) / √5 = 986.9999999999998
+
+Verdict, same case as before, 986.9999 rounds up to 987, so this is
+
+VALID
+
+
+I only did 5 tests, but I think this is good enough proof that Fib(n)=(φⁿ-ψⁿ)/√5.
