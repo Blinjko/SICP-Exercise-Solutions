@@ -1,0 +1,42 @@
+The following "gcd" procedure was used when solving this exercise:
+(define (gcd a b)
+  (if (= b 0)
+      a
+      (gcd b (remainder a b))))
+
+
+Applicative Order evaluation of (gcd 206 40) using the substitution method
+
+#Iteration 1
+(gcd 206 40) 
+(if (= 40 0) 206 (gcd 40 (remainder 206 40)))
+(if false 206 (gcd 40 (remainder 206 40)))
+(if false 206 (gcd 40 6)))
+
+#Iteration 2
+(gcd 40 6)
+(if (= 6 0) 40 (gcd 6 (remainder 40 6)))
+(if false 40 (gcd 6 (remainder 40 6)))
+(if false 40 (gcd 6 4))
+
+#Iteration 3
+(gcd 6 4)
+(if (= 4 0) 6 (gcd 4 (remainder 6 4)))
+(if false 6 (gcd 4 (remainder 6 4)))
+(if flase 6 (gcd 4 2))
+
+#Iteration 4
+(gcd 4 2)
+(if (= 2 0) 4 (gcd 2 (remainder 4 2)))
+(if false 4 (gcd 2 (remainder 4 2)))
+(if false 4 (gcd 2 0))
+
+#Iteration 5
+(gcd 2 0)
+(if (= 0 0) 2 (gcd 0 (remainder 2 0)))
+(if true 2 (gcd 0 (remainder 2 )))
+2
+
+The "remainder" operation was performed 4 times in the solving of (gcd 206 40) using applicative order evaluation.
+
+The normal order evaluation of (gcd 206 40) is the same as the applicative order evaluation. The reason for this is in the definition of how if statements should be handled when expanding a procedure, that definition being: "Assume that the evaluation rule for the special form if is the same whether the interpreter is using normal or applicative order: The predicate expression is evaluated first, and the result determines whether to evaluate the consequent or the alternative expression." So, normally with normal order, you would expand all operations until primitive operations remained, but we cannot do that due to the definition of how ifs are evaluated. Evaluating "(gcd 206 40)" in normal order would give the result: "(if (= 40 0) 206 (gcd 40 (remainder 206 40)))". This cannot be simplified more because the definition of how if are to be evaluated says that the predicate needs to be evaluated first, then either the consequent (206), or the alternative expression (gcd 40 (remainder 206 40)) will be evaluated. So once more the expression "if (= 40 0) 206 (gcd 40 (remainder 206 40)))" cannot be fully expanded because (= 40 0) needs to be evaluated before the result of the if statement.
