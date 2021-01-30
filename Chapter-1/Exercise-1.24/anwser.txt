@@ -1,0 +1,52 @@
+Since the Fermat test has θ(log n) growth, how would you expect the time to test primes near 1,000,000 to compare with the time needed to test primes near 1000? Do your data bear this out? Can you explain any discrepancy you find?
+
+I would expect the time to compute primes around 1,000,000 to be a little bit greater than primes around 1000, because with logarithmic growth primes around 1,000,000 should take roughly 3 steps or iterations more to compute then primes around 1000.
+
+The Data:
+
+Number: 1009
+Time: 108653.92
+---------------------
+Number: 1013
+Time: 108655.92
+---------------------
+Number: 1019
+Time: 108656.92
+---------------------
+Number: 10007
+Time: 108656.92
+---------------------
+Number: 10009
+Time: 108657.92
+---------------------
+Number: 10037
+Time: 108657.92
+---------------------
+Number: 100003
+Time: 108658.92
+---------------------
+Number: 100019
+Time: 108658.92
+---------------------
+Number: 100043
+Time: 108659.92
+---------------------
+Number: 1000003
+Time: 108659.92
+---------------------
+Number: 1000033
+Time: 108660.92
+---------------------
+Number: 1000037
+Time: 108660.91
+
+Some math:
+108659.92 / 108653.92 = 1.0000643326996395
+108660.92 / 108655.92 = 1.0000460168208045
+108660.91 / 108656.92 = 1.0000367210850447
+
+Did my data bear my thoughs on growth out?
+Yes the data did bear out the results to what I thought, and overall it looks like I underestimated how fast it would actually be. The difference in time is so minute that a person would not likely have noticed if they hadn't been given data.
+
+Any discrepencies?
+No discrepencies here, this is more or less what I expected, everything seems in order.

@@ -1,0 +1,8 @@
+199
+Smallest Divisor: 199
+
+1999
+Smallest Divisor: 1999
+
+19999
+Smallest Divisor: 7

@@ -1,0 +1,63 @@
+The "search-for-primes" procedure can be found in the "procedure.scm" file.
+
+Three smallest primes greater than 1000:
+
+1009 *** 1223924.81
+1013 *** 1223925.8
+1019 *** 1223926.8
+
+
+Three smallest primes greater than 10,000:
+
+10007 *** 1344686.79
+10009 *** 1344688.79
+10037 *** 1344693.78
+
+
+Three smallest pimes greater than 100,000:
+
+100003 *** 1410540.77
+100019 *** 1410549.76
+100043 *** 1410560.75
+
+Three smallest primes greater than 1,000,000:
+
+1000003 *** 1473532.72
+1000033 *** 1473542.71
+1000037 *** 1473546.7
+
+
+Open ended questions:
+
+Since the testing algorithm has order of growth of θ(√n), you should expect that testing for primes around 10,000 should take about √10 times as long as testing for primes around 1000. Do your timing data bear this out?
+
+Time for primes around 1000: 1223925
+Time for primes around 10,000: 1344687
+1344687 / 1223925 = 1.0986
+√10 = 3.1622
+
+The data above shows that the time it took to comput primes around 10,000 was roughly 1.0986 times longer than the time it took to computer primes around 1000. The estimated quotient (√10) was off by more than 2. Let us use the remaining data to see if this pattern continues. 
+
+Time for primes around 10,000: 1344687
+Time for primes around 100,000: 1410541
+1344687 / 1410541 = 1.0489
+√10 = 3.1622
+
+Time for primes around 100,000: 1410541
+Time for primes around 1,000,000: 1473533
+1473533 / 1410541 = 1.0446
+√10 = 3.1622
+
+It seems that the rest of the data reflects the same pattern. It can be concluded that the procedure doesn't reflect the theories presented above in the question.
+
+
+----------------------------------
+How well do the data for 100,000 and 1,000,000 support the √n prediction?
+
+It did not do very well seeing as how it doesn't support the √n prediction, and if anything it is farther away from supporting the √n prediction that 1000 and 10,000.
+
+
+----------------------------------
+Is your result compatible with the notion that programs on your machine run in time proportional to the number of steps required for the computation?
+
+Yes, the results of the computations, listed above, show the amount of time increasing as the numbers got bigger, also the time increased at a sort-of constant rate. 

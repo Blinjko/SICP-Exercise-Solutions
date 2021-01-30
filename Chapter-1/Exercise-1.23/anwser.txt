@@ -1,0 +1,61 @@
+The code used to get the following data can be found in the "anwser.scm" file.
+
+The data:
+
+Number: 1009
+Original Time: 1223924.81
+New Time:      215527.92
+---------------------
+Number: 1013
+Original Time: 1223925.8
+New Time:      215529.92
+---------------------
+Number: 1019
+Original Time: 1223926.8
+New Time:      215530.92
+---------------------
+Number: 10007
+Original Time: 1344686.79
+New Time:      215531.92
+---------------------
+Number: 10009
+Original Time: 1344688.79
+New Time:      215531.92
+---------------------
+Number: 10037
+Original Time: 1344693.78
+New Time:      215532.92
+---------------------
+Number: 100003
+Original Time: 1410540.77
+New Time:      215532.92
+---------------------
+Number: 100019
+Original Time: 1410549.76
+New Time:      215532.92
+---------------------
+Number: 100043
+Original Time: 1410560.75
+New Time:      215533.91
+---------------------
+Number: 1000003
+Original Time: 1473532.72
+New Time:      215533.91
+---------------------
+Number: 1000033
+Original Time: 1473542.71
+New Time:      215534.91
+---------------------
+Number: 1000037
+Original Time: 1473546.71
+New Time:      215535.91
+
+Open ended question:
+With timed-prime-test incorporating this modified version of smallest-divisor, run the test for each of the 12 primes found in exercise 1.22. Since this modification halves the number of test steps, you should expect it to run about twice as fast. Is this expectation confirmed? If not, what is the observed ratio of the speeds of the two algorithms, and how do you explain the fact that it is different from 2?
+
+First some math:
+1473532.72 / 215533.91 = 6.83
+1473542.71 / 215534.91 = 6.83
+1473546.71 / 215535.91 = 6.83
+
+The expectation of the new "smalles-divisor" procedure taking half has much time, because there was half as much steps was not met. In other words the new procedure wasn't 2 times faster like expected, but rather 6.83 times faster. Some observed speeds can be seen above in the format old_speed / new_speed = times_faster. A potential explanation for this could be that every iteration doesn't take the same amount of computational steps, so even though the number of iterations was halfed, the number of steps could be more than halved.
